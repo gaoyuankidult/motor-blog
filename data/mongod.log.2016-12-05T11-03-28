@@ -1,0 +1,78 @@
+2016-12-05T10:54:22.780+0000 I CONTROL  [initandlisten] MongoDB starting : pid=34 port=27017 dbpath=/root/motor-blog/data 64-bit host=9b9208e57379
+2016-12-05T10:54:22.781+0000 I CONTROL  [initandlisten] db version v3.0.14
+2016-12-05T10:54:22.781+0000 I CONTROL  [initandlisten] git version: 08352afcca24bfc145240a0fac9d28b978ab77f3
+2016-12-05T10:54:22.781+0000 I CONTROL  [initandlisten] build info: Linux ip-10-51-169-85 3.13.0-24-generic #46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014 x86_64 BOOST_LIB_VERSION=1_49
+2016-12-05T10:54:22.781+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+2016-12-05T10:54:22.781+0000 I CONTROL  [initandlisten] options: { processManagement: { fork: true }, setParameter: { textSearchEnabled: "true" }, storage: { dbPath: "/root/motor-blog/data" }, systemLog: { destination: "file", path: "/root/motor-blog/data/mongod.log" } }
+2016-12-05T10:54:22.823+0000 I JOURNAL  [initandlisten] journal dir=/root/motor-blog/data/journal
+2016-12-05T10:54:22.824+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2016-12-05T10:54:22.981+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 2.06
+2016-12-05T10:54:23.104+0000 I JOURNAL  [durability] Durability thread started
+2016-12-05T10:54:23.105+0000 I JOURNAL  [journal writer] Journal writer thread started
+2016-12-05T10:54:23.107+0000 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
+2016-12-05T10:54:23.107+0000 I CONTROL  [initandlisten] 
+2016-12-05T10:54:23.107+0000 I CONTROL  [initandlisten] 
+2016-12-05T10:54:23.107+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+2016-12-05T10:54:23.107+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2016-12-05T10:54:23.108+0000 I CONTROL  [initandlisten] 
+2016-12-05T10:54:23.108+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/defrag is 'always'.
+2016-12-05T10:54:23.108+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2016-12-05T10:54:23.108+0000 I CONTROL  [initandlisten] 
+2016-12-05T10:54:23.110+0000 I INDEX    [initandlisten] allocating new ns file /root/motor-blog/data/local.ns, filling with zeroes...
+2016-12-05T10:54:23.260+0000 I STORAGE  [FileAllocator] allocating new datafile /root/motor-blog/data/local.0, filling with zeroes...
+2016-12-05T10:54:23.260+0000 I STORAGE  [FileAllocator] creating directory /root/motor-blog/data/_tmp
+2016-12-05T10:54:23.405+0000 I STORAGE  [FileAllocator] done allocating datafile /root/motor-blog/data/local.0, size: 64MB,  took 0.142 secs
+2016-12-05T10:54:23.411+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+2016-12-05T10:54:23.500+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53801 #1 (1 connection now open)
+2016-12-05T10:54:23.502+0000 I INDEX    [conn1] allocating new ns file /root/motor-blog/data/motorblog.ns, filling with zeroes...
+2016-12-05T10:54:23.659+0000 I STORAGE  [FileAllocator] allocating new datafile /root/motor-blog/data/motorblog.0, filling with zeroes...
+2016-12-05T10:54:23.816+0000 I STORAGE  [FileAllocator] done allocating datafile /root/motor-blog/data/motorblog.0, size: 64MB,  took 0.156 secs
+2016-12-05T10:54:23.827+0000 I COMMAND  [conn1] command motorblog.$cmd command: create { create: "events", capped: true, size: 102400.0 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:37 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, MMAPV1Journal: { acquireCount: { w: 6 }, acquireWaitCount: { w: 1 }, timeAcquiringMicros: { w: 392 } }, Database: { acquireCount: { W: 1 } }, Metadata: { acquireCount: { W: 4 } } } 325ms
+2016-12-05T10:54:23.834+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53802 #2 (2 connections now open)
+2016-12-05T10:54:23.835+0000 I INDEX    [conn2] build index on: motorblog.categories properties: { v: 1, unique: true, key: { name: 1 }, name: "name_1", ns: "motorblog.categories" }
+2016-12-05T10:54:23.835+0000 I INDEX    [conn2] 	 building index using bulk method
+2016-12-05T10:54:23.836+0000 I INDEX    [conn2] build index done.  scanned 0 total records. 0 secs
+2016-12-05T10:54:23.838+0000 I INDEX    [conn2] build index on: motorblog.posts properties: { v: 1, key: { type: 1, _id: -1 }, name: "type_1__id_-1", ns: "motorblog.posts" }
+2016-12-05T10:54:23.838+0000 I INDEX    [conn2] 	 building index using bulk method
+2016-12-05T10:54:23.838+0000 I INDEX    [conn2] build index done.  scanned 0 total records. 0 secs
+2016-12-05T10:54:23.839+0000 I INDEX    [conn1] build index on: motorblog.posts properties: { v: 1, key: { status: 1, type: 1, pub_date: -1 }, name: "status_1_type_1_pub_date_-1", ns: "motorblog.posts" }
+2016-12-05T10:54:23.839+0000 I INDEX    [conn1] 	 building index using bulk method
+2016-12-05T10:54:23.840+0000 I INDEX    [conn1] build index done.  scanned 0 total records. 0 secs
+2016-12-05T10:54:23.841+0000 I INDEX    [conn2] build index on: motorblog.posts properties: { v: 1, key: { status: 1, type: 1, categories.name: 1, pub_date: -1 }, name: "status_1_type_1_categories.name_1_pub_date_-1", ns: "motorblog.posts" }
+2016-12-05T10:54:23.841+0000 I INDEX    [conn2] 	 building index using bulk method
+2016-12-05T10:54:23.841+0000 I INDEX    [conn2] build index done.  scanned 0 total records. 0 secs
+2016-12-05T10:54:23.843+0000 I INDEX    [conn1] build index on: motorblog.posts properties: { v: 1, key: { status: 1, type: 1, tags: 1, pub_date: -1 }, name: "status_1_type_1_tags_1_pub_date_-1", ns: "motorblog.posts" }
+2016-12-05T10:54:23.843+0000 I INDEX    [conn1] 	 building index using bulk method
+2016-12-05T10:54:23.843+0000 I INDEX    [conn1] build index done.  scanned 0 total records. 0 secs
+2016-12-05T10:54:23.845+0000 I INDEX    [conn2] build index on: motorblog.posts properties: { v: 1, unique: true, key: { slug: 1 }, name: "slug_1", ns: "motorblog.posts" }
+2016-12-05T10:54:23.845+0000 I INDEX    [conn2] 	 building index using bulk method
+2016-12-05T10:54:23.845+0000 I INDEX    [conn2] build index done.  scanned 0 total records. 0 secs
+2016-12-05T10:54:23.846+0000 I INDEX    [conn1] build index on: motorblog.posts properties: { v: 1, key: { tags: 1, pub_date: -1 }, name: "tags_1_pub_date_-1", ns: "motorblog.posts" }
+2016-12-05T10:54:23.847+0000 I INDEX    [conn1] 	 building index using bulk method
+2016-12-05T10:54:23.847+0000 I INDEX    [conn1] build index done.  scanned 0 total records. 0 secs
+2016-12-05T10:54:23.848+0000 I INDEX    [conn2] build index on: motorblog.posts properties: { v: 1, key: { _fts: "text", _ftsx: 1 }, name: "title_text_categories.name_text_tags_text_plain_text", ns: "motorblog.posts", weights: { categories.name: 5, plain: 1, tags: 5, title: 10 }, default_language: "english", language_override: "language", textIndexVersion: 2 }
+2016-12-05T10:54:23.848+0000 I INDEX    [conn2] 	 building index using bulk method
+2016-12-05T10:54:23.848+0000 I INDEX    [conn2] build index done.  scanned 0 total records. 0 secs
+2016-12-05T10:54:23.850+0000 I INDEX    [conn1] build index on: motorblog.fs.files properties: { v: 1, key: { uploadDate: 1 }, name: "uploadDate_1", ns: "motorblog.fs.files" }
+2016-12-05T10:54:23.850+0000 I INDEX    [conn1] 	 building index using bulk method
+2016-12-05T10:54:23.851+0000 I INDEX    [conn1] build index done.  scanned 0 total records. 0 secs
+2016-12-05T10:59:41.642+0000 I NETWORK  [conn2] end connection 127.0.0.1:53802 (1 connection now open)
+2016-12-05T10:59:41.642+0000 I NETWORK  [conn1] end connection 127.0.0.1:53801 (0 connections now open)
+2016-12-05T11:03:48.640+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53807 #3 (1 connection now open)
+2016-12-05T11:08:13.973+0000 I NETWORK  [conn3] end connection 127.0.0.1:53807 (0 connections now open)
+2016-12-05T11:13:54.837+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53808 #4 (1 connection now open)
+2016-12-05T11:13:54.845+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53809 #5 (2 connections now open)
+2016-12-05T11:13:54.868+0000 I NETWORK  [conn4] end connection 127.0.0.1:53808 (1 connection now open)
+2016-12-05T11:13:54.868+0000 I NETWORK  [conn5] end connection 127.0.0.1:53809 (0 connections now open)
+2016-12-05T12:16:01.325+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53812 #6 (1 connection now open)
+2016-12-05T12:16:01.336+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53813 #7 (2 connections now open)
+2016-12-05T12:16:01.370+0000 I NETWORK  [conn6] end connection 127.0.0.1:53812 (1 connection now open)
+2016-12-05T12:16:01.371+0000 I NETWORK  [conn7] end connection 127.0.0.1:53813 (0 connections now open)
+2016-12-05T12:16:37.598+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53814 #8 (1 connection now open)
+2016-12-05T12:16:37.624+0000 I NETWORK  [conn8] end connection 127.0.0.1:53814 (0 connections now open)
+2016-12-05T12:18:45.255+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53815 #9 (1 connection now open)
+2016-12-05T12:19:09.691+0000 I NETWORK  [conn9] end connection 127.0.0.1:53815 (0 connections now open)
+2016-12-05T12:19:26.599+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53816 #10 (1 connection now open)
+2016-12-05T12:57:12.975+0000 I NETWORK  [conn10] end connection 127.0.0.1:53816 (0 connections now open)
+2016-12-05T12:57:50.232+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53817 #11 (1 connection now open)
+2016-12-05T13:18:53.142+0000 I NETWORK  [conn11] end connection 127.0.0.1:53817 (0 connections now open)

@@ -3,6 +3,7 @@ import pytz
 
 import sockjs.tornado
 import tornado.web
+from tornado import web
 from motor.web import GridFSHandler
 from tornado.web import StaticFileHandler
 
@@ -24,9 +25,10 @@ def get_application(root_dir, db, option_parser):
 
     urls = [
         # XML-RPC API
-        U(r"/rsd", RSDHandler, name='rsd'),
         U(r"/api", APIHandler, name='api'),
-
+        U(r"/rsd", RSDHandler, name='rsd'),
+	# Test
+	(r"/static/(.*)", web.StaticFileHandler, {"path": "web-static"}),	
         # Admin
         U(r"admin/?", LoginHandler, name='login'),
         U(r"admin/logout/?", LogoutHandler, name='logout'),
